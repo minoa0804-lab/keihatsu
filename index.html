@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STOP! 特殊詐欺 | 啓発ワンページ</title>
+  <meta name="description" content="特殊詐欺の被害を防ぐための注意喚起・ポスター配布・待ち受け画像・ティラノスクリプトゲーム紹介をまとめた啓発ページです。">
+  <meta name="color-scheme" content="light dark">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <header class="hero" id="top" data-animate="fade">
+    <div class="hero__nav container">
+      <a class="brand" href="#top" aria-label="トップへ戻る">STOP! 特殊詐欺</a>
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="メニューを開く">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <ul id="navMenu">
+          <li><a data-nav-link href="#alert">注意喚起</a></li>
+          <li><a data-nav-link href="#poster">ポスター</a></li>
+          <li><a data-nav-link href="#wallpapers">待ち受け</a></li>
+          <li><a data-nav-link href="#game">ゲーム</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero__inner container">
+      <div class="hero__copy">
+        <p class="eyebrow">家族と地域で守る</p>
+        <h1>特殊詐欺を、いま止める。</h1>
+        <p class="hero__lead">キャッシュカード預かり・還付金・警察を名乗る電話─不審だと思ったら一度通話を切り、公式窓口へ。啓発素材と参加型ゲームで、周りの人にも素早く共有できます。</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="tel:#9110">#9110に相談</a>
+          <a class="btn" href="#poster">素材を確認</a>
+        </div>
+      </div>
+      <div class="hero__info">
+        <div class="hero__ticker" aria-live="polite">
+          <p class="ticker__label">リアルタイム注意喚起</p>
+          <p id="tickerMessage">最新情報を取得中...</p>
+        </div>
+        <dl class="hero__stats">
+          <div>
+            <dt>見守り宣言</dt>
+            <dd>365日 24時間</dd>
+          </div>
+          <div>
+            <dt>相談窓口</dt>
+            <dd>#9110 / 110</dd>
+          </div>
+          <div>
+            <dt>配布素材</dt>
+            <dd>ポスター・待ち受け・ゲーム</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="alert" class="block block--alert" aria-labelledby="alertTitle" data-animate="fade">
+      <div class="container">
+        <header class="block__header">
+          <p class="eyebrow">Section 01</p>
+          <h2 id="alertTitle">注意喚起｜不審な連絡は一度切って確認</h2>
+          <p>肩書や機関名を名乗られても慌てず、一旦通話やメッセージを止めて公式番号から折り返し確認。家族や職場で合言葉を決め、詐欺に強いコミュニケーションを育てましょう。</p>
+        </header>
+
+        <div class="alert-grid">
+          <article class="card card--alert">
+            <p class="badge">STEP 1</p>
+            <h3>自分で調べた番号に折り返す</h3>
+            <p>自治体や金融機関を名乗られても、受け取った番号へは絶対に連絡しない。公式サイト・書面で調べてから落ち着いて確認。</p>
+          </article>
+          <article class="card card--alert">
+            <p class="badge">STEP 2</p>
+            <h3>暗証番号・カードを渡さない</h3>
+            <p>銀行・警察が暗証番号やキャッシュカードを預かったり、写真を要求することはありません。「預かります」は全て詐欺です。</p>
+          </article>
+          <article class="card card--alert">
+            <p class="badge">STEP 3</p>
+            <h3>#9110 へすぐ相談</h3>
+            <p>迷ったら警察相談専用電話 #9110 / 緊急時は110。家族・知人ともチャットや電話で必ず共有。</p>
+          </article>
+        </div>
+
+        <div class="alert-tools">
+          <div class="alert-tools__list">
+            <h3>すぐできる3つのアクション</h3>
+            <ol>
+              <li>公式番号を自分で検索して折り返す</li>
+              <li>留守電・録音機能をONにして証拠を確保</li>
+              <li>家族で「合図の言葉」を決めておく</li>
+            </ol>
+          </div>
+          <div class="alert-tools__topics">
+            <h3>地域トピックス</h3>
+            <ul id="topicList"></ul>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn--primary" href="https://www.npa.go.jp/bureau/safetylife/sos47/" target="_blank" rel="noopener">警察庁 特殊詐欺対策</a>
+          <a class="btn" href="#wallpapers">待ち受けを配布</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="poster" class="block block--poster" aria-labelledby="posterTitle" data-animate="slide">
+      <div class="container">
+        <header class="block__header">
+          <p class="eyebrow">Section 02</p>
+          <h2 id="posterTitle">印刷ポスター｜その場で掲示</h2>
+          <p>A3/A4 300dpi の高解像度データを用意。地域イベント・金融機関・集合住宅など掲示場所ごとに3種類のデザインを切り替えられます。</p>
+        </header>
+
+        <div class="poster-slider">
+          <button class="poster-slider__control" data-direction="prev" aria-label="前のポスター">‹</button>
+          <figure id="posterFigure" class="poster-figure">
+            <img src="assets/poster-warning-01.jpg" alt="" width="640" height="900" loading="lazy">
+            <figcaption>
+              <p class="poster-figure__title"></p>
+              <p class="poster-figure__meta"></p>
+              <div class="poster-figure__actions">
+                <a class="btn btn--primary" id="posterDownload" href="#" download>高解像度をダウンロード</a>
+                <button class="btn btn--ghost" id="posterShare" type="button">共有リンクをコピー</button>
+              </div>
+            </figcaption>
+          </figure>
+          <button class="poster-slider__control" data-direction="next" aria-label="次のポスター">›</button>
+        </div>
+
+        <div class="poster-thumbs" id="posterThumbs" role="listbox" aria-label="ポスター一覧"></div>
+      </div>
+    </section>
+
+    <section id="wallpapers" class="block" aria-labelledby="wallpaperTitle" data-animate="fade">
+      <div class="container">
+        <header class="block__header">
+          <p class="eyebrow">Section 03</p>
+          <h2 id="wallpaperTitle">スマホ待ち受け｜家族で共有</h2>
+          <p>1080×1920px の縦型画像を PNG / WebP で配布。カテゴリ別フィルターで家族・事業者・シニア向けにすぐ届けられます。</p>
+        </header>
+
+        <div class="filter" role="group" aria-label="カテゴリ選択">
+          <button class="filter__btn is-active" data-filter="all">すべて</button>
+          <button class="filter__btn" data-filter="family">家族向け</button>
+          <button class="filter__btn" data-filter="office">事業者向け</button>
+          <button class="filter__btn" data-filter="senior">シニア向け</button>
+        </div>
+
+        <div id="wallpaperGrid" class="grid grid--cards"></div>
+        <p class="note">※ ZIP 同梱の告知素材にはSNS用スクエア画像、説明文テンプレートも含まれます。</p>
+      </div>
+    </section>
+
+    <section id="game" class="block block--game" aria-labelledby="gameTitle" data-animate="slide">
+      <div class="container game">
+        <div class="game__content">
+          <header class="block__header">
+            <p class="eyebrow">Section 04</p>
+            <h2 id="gameTitle">ティラノスクリプトで学べる「詐欺ゼロへの道」</h2>
+            <p>シナリオ分岐で詐欺の手口を疑似体験し、正しい行動で防犯ポイントを集めるゲーム。学校・地域講座にも配布できます。<span id="releaseLabel"></span></p>
+          </header>
+          <ul class="game__features">
+            <li>5つの代表的な特殊詐欺をストーリーで再現</li>
+            <li>プレイ結果に応じて「詐欺耐性スコア」を表示</li>
+            <li>ゲーム内に #9110 発信ボタンと啓発リンクを設置</li>
+          </ul>
+          <div class="game__cta">
+            <a class="btn btn--primary" href="https://example.com/tyrano/game" target="_blank" rel="noopener">ゲームを遊ぶ</a>
+            <a class="btn" href="assets/game-guide.pdf" download>操作ガイド PDF</a>
+          </div>
+        </div>
+        <div class="game__media">
+          <video src="assets/tyrano-demo.mp4" autoplay loop muted playsinline poster="assets/tyrano-demo.jpg"></video>
+          <p class="game__caption">体験版ダイジェスト（30秒）</p>
+          <ul class="game__links">
+            <li><a href="https://tyrano.jp/" target="_blank" rel="noopener">ティラノスクリプト公式</a></li>
+            <li><a href="assets/game-qr.png" download>ゲーム共有用QRコード</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="ページトップに戻る">↑</button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 広報課 特殊詐欺防止キャンペーン</p>
+      <p id="updateLabel">最終更新: --</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.remove('no-js');
+  </script>
+  <script type="module" src="main.js"></script>
+  <noscript>
+    <style>
+      [data-animate] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</body>
+</html>
