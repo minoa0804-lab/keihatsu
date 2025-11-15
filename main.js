@@ -62,7 +62,7 @@ const wallpapers = [
       webp: "assets/wallpaper-office-02.webp"
     },
     tags: ["ATM禁止", "社内掲示"]
-  },
+  }
 ];
 
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -321,4 +321,5 @@ function setUpdateLabels() {
   if (updateLabel) updateLabel.textContent = `最終更新: ${now}`;
   if (releaseLabel) releaseLabel.textContent = `（最新アップデート: ${now}）`;
 }
+
 
