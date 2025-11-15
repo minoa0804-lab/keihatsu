@@ -41,27 +41,27 @@ const posters = [
 const wallpapers = [
   {
     id: "wp01",
-    title: "家族で合言葉",
-    description: "通話の前に家族で合言葉を確認しようと呼びかける柔らかなデザイン。",
-    category: "family",
-    preview: "assets/wallpaper-family-01.jpg",
+    title: "こへんろちゃん",
+    description: "通報の合言葉を忘れないよう、柔らかな色合いで仕上げた定番デザイン。",
+    category: "all",
+    preview: "assets/wallpaper-kohenro-chan.jpg",
     downloads: {
-      png: "assets/wallpaper-family-01.png",
-      webp: "assets/wallpaper-family-01.webp"
+      png: "assets/wallpaper-kohenro-chan.png",
+      webp: "assets/wallpaper-kohenro-chan.webp"
     },
     tags: ["合言葉", "家族LINE"]
   },
   {
     id: "wp02",
-    title: "事業所アラート",
-    description: "オフィスのロビーやレジ横で目に入る警告ピクトを大きく配置。",
-    category: "office",
-    preview: "assets/wallpaper-office-02.jpg",
+    title: "ダークへんろちゃん",
+    description: "シックな背景に警告メッセージを配置した夜間待ち受け向けバージョン。",
+    category: "all",
+    preview: "assets/wallpaper-dark-kohenro.jpg",
     downloads: {
-      png: "assets/wallpaper-office-02.png",
-      webp: "assets/wallpaper-office-02.webp"
+      png: "assets/wallpaper-dark-kohenro.png",
+      webp: "assets/wallpaper-dark-kohenro.webp"
     },
-    tags: ["ATM禁止", "社内掲示"]
+    tags: ["夜間モード", "#9110"]
   }
 ];
 
@@ -321,5 +321,6 @@ function setUpdateLabels() {
   if (updateLabel) updateLabel.textContent = `最終更新: ${now}`;
   if (releaseLabel) releaseLabel.textContent = `（最新アップデート: ${now}）`;
 }
+
 
 
