@@ -63,30 +63,6 @@ const wallpapers = [
     },
     tags: ["ATM禁止", "社内掲示"]
   },
-  {
-    id: "wp03",
-    title: "シニア向け書体",
-    description: "大きな文字とコントラストで見やすさを重視。#9110の番号を中央に配置。",
-    category: "senior",
-    preview: "assets/wallpaper-senior-03.jpg",
-    downloads: {
-      png: "assets/wallpaper-senior-03.png",
-      webp: "assets/wallpaper-senior-03.webp"
-    },
-    tags: ["大きな文字", "#9110"]
-  },
-  {
-    id: "wp04",
-    title: "みんなでSTOP!",
-    description: "SNS共有向けのポップなカラー。防犯チェックリストを下部に掲載。",
-    category: "family",
-    preview: "assets/wallpaper-pop-04.jpg",
-    downloads: {
-      png: "assets/wallpaper-pop-04.png",
-      webp: "assets/wallpaper-pop-04.webp"
-    },
-    tags: ["拡散", "チェックリスト"]
-  }
 ];
 
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -345,3 +321,4 @@ function setUpdateLabels() {
   if (updateLabel) updateLabel.textContent = `最終更新: ${now}`;
   if (releaseLabel) releaseLabel.textContent = `（最新アップデート: ${now}）`;
 }
+
