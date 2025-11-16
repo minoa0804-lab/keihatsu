@@ -125,11 +125,6 @@ a:focus-visible {
   border-color: var(--color-primary);
 }
 
-#navMenu a.is-active {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
 .nav-toggle {
   display: none;
   flex-direction: column;
