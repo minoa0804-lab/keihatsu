@@ -119,6 +119,12 @@ a:focus-visible {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
+#navMenu a:hover,
+#navMenu a:focus-visible {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
 #navMenu a.is-active {
   color: var(--color-primary);
   border-color: var(--color-primary);
