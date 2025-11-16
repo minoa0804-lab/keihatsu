@@ -46,7 +46,7 @@ const wallpapers = [
     category: "all",
     preview: "assets/wallpaper-kohenro-chan.jpg",
     downloads: {
-      png: "assets/wallpaper-kohenro-chan.png",
+      jpg: "assets/wallpaper-kohenro-chan.jpg",
       webp: "assets/wallpaper-kohenro-chan.webp"
     },
     tags: ["合言葉", "家族LINE"]
@@ -58,7 +58,7 @@ const wallpapers = [
     category: "all",
     preview: "assets/wallpaper-dark-kohenro.jpg",
     downloads: {
-      png: "assets/wallpaper-dark-kohenro.png",
+      jpg: "assets/wallpaper-dark-kohenro.jpg",
       webp: "assets/wallpaper-dark-kohenro.webp"
     },
     tags: ["夜間モード", "#9110"]
@@ -212,7 +212,7 @@ function initWallpapers() {
           <p>${wp.description}</p>
           <ul class="tag-list">${wp.tags.map(tag => `<li>${tag}</li>`).join("")}</ul>
           <div class="download-row">
-            <a class="btn btn--primary" href="${wp.downloads.png}" download>PNG</a>
+            <a class="btn btn--primary" href="${wp.downloads.jpg}" download>JPG</a>
             <a class="btn btn--ghost" href="${wp.downloads.webp}" download>WebP</a>
           </div>
         </div>
