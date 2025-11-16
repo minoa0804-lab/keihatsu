@@ -6,9 +6,9 @@ const tickerMessages = [
 ];
 
 const topics = [
-  { pref: "全国", text: "還付金詐欺の自動音声が多発。ATMで手続きを促す連絡は無視。" },
-  { pref: "○○県", text: "自治体職員を名乗る医療費返還電話を確認。公式番号で折り返しを。" },
-  { pref: "市内", text: "金融機関を装うSMSでカード情報入力を誘導する事案が発生。" }
+  "4月25日（木）庁舎1階ロビーで被害防止ミニセミナーと個別相談会を開催します。",
+  "地域団体・企業向けの『検察庁出張講話』申込みを専用フォームで受け付けています。",
+  "不審電話やSMSに気付いた際は #9110 か高松地方検察庁の相談窓口へ速やかにご連絡ください。"
 ];
 
 const posters = [
@@ -42,7 +42,7 @@ const wallpapers = [
   {
     id: "wp01",
     title: "こへんろちゃん",
-    description: "通報の合言葉を忘れないよう、柔らかな色合いで仕上げた定番デザイン。",
+    description: "通報の合言葉を忘れないよう柔らかな色合いで仕上げた定番デザイン。",
     category: "all",
     preview: "assets/wallpaper-kohenro-chan.jpg",
     downloads: {
@@ -54,7 +54,7 @@ const wallpapers = [
   {
     id: "wp02",
     title: "ダークへんろちゃん",
-    description: "シックな背景に警告メッセージを配置した夜間待ち受け向けバージョン。",
+    description: "シックな背景に警告メッセージを配置した夜間待受け向けバージョン。",
     category: "all",
     preview: "assets/wallpaper-dark-kohenro.jpg",
     downloads: {
@@ -110,7 +110,7 @@ function populateTopics() {
 
   topics.forEach(topic => {
     const li = document.createElement("li");
-    li.innerHTML = `<strong>${topic.pref}</strong><span>${topic.text}</span>`;
+    li.textContent = topic;
     list.appendChild(li);
   });
 
@@ -197,7 +197,7 @@ function initWallpapers() {
     if (!filtered.length) {
       const empty = document.createElement("p");
       empty.className = "note";
-      empty.textContent = "該当する待ち受けはありません。";
+      empty.textContent = "該当する壁紙はありません。";
       grid.appendChild(empty);
       return;
     }
@@ -319,8 +319,5 @@ function setUpdateLabels() {
   const formatter = new Intl.DateTimeFormat("ja-JP", { dateStyle: "medium" });
   const now = formatter.format(new Date());
   if (updateLabel) updateLabel.textContent = `最終更新: ${now}`;
-  if (releaseLabel) releaseLabel.textContent = `（最新アップデート: ${now}）`;
+  if (releaseLabel) releaseLabel.textContent = `｜最新アップデート: ${now}`;
 }
-
-
-
