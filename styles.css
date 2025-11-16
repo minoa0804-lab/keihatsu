@@ -167,6 +167,18 @@ body.nav-open {
   color: var(--color-muted);
 }
 
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero__cta .btn {
+  flex: 1 1 200px;
+  text-align: center;
+}
+
 .hero__ticker {
   padding: 1rem 1.5rem;
   border-radius: var(--radius-md);
