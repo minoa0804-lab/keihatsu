@@ -6,34 +6,34 @@ const tickerMessages = [
 ];
 
 const topics = [
-  "4月25日（木）庁舎1階ロビーで被害防止ミニセミナーと個別相談会を開催します。",
-  "地域団体・企業向けの『検察庁出張講話』申込みを専用フォームで受け付けています。",
-  "不審電話やSMSに気付いた際は #9110 か高松地方検察庁の相談窓口へ速やかにご連絡ください。"
+  "高松地方検察庁特殊詐欺防止啓発ページを公開しました",
+  "ポスター、待受画面を公開しました。",
+  "特殊詐欺体験型の啓発ゲームを公開しました。"
 ];
 
 const posters = [
   {
-    title: "地域みんなで見守るDAY",
+    title: "その電話、なりすましかも（ブラックへんろちゃん）",
     image: "assets/poster-warning-01.jpg",
-    alt: "地域住民が連携する様子のポスター見本",
+    alt: "ブラックへんろちゃんのポスター",
     download: "assets/poster-warning-01-a3.pdf",
-    size: "A3/A4 300dpi",
-    tip: "自治会掲示板・商店街に最適"
+    size: "A4 300dpi",
+    tip: "自治会や会社の掲示板・商店街に最適"
   },
   {
-    title: "ATMで還付金は受け取れない",
+    title: "この検察官、何かがおかしい",
     image: "assets/poster-atm-02.jpg",
-    alt: "ATMでの還付金手続きを止めるメッセージポスター",
+    alt: "女性検察官が電話をかけていますが、何か検察官らしくない",
     download: "assets/poster-atm-02-a3.pdf",
-    size: "A3/A2 350dpi",
-    tip: "銀行・郵便局・ショッピングモール向け"
+    size: "A4 300dpi",
+    tip: "自宅の電話機付近に掲示するのに最適"
   },
   {
-    title: "電話を切る勇気を持って",
+    title: "その電話、なりすましかも",
     image: "assets/poster-call-03.jpg",
-    alt: "電話を切って相談する内容のポスター",
+    alt: "電話の対応をしているたぬきのポスター",
     download: "assets/poster-call-03-a3.pdf",
-    size: "A3/A4 300dpi",
+    size: "A4 300dpi",
     tip: "公共施設・医療機関・役所向け"
   }
 ];
@@ -42,26 +42,26 @@ const wallpapers = [
   {
     id: "wp01",
     title: "こへんろちゃん",
-    description: "通報の合言葉を忘れないよう柔らかな色合いで仕上げた定番デザイン。",
+    description: "検事を名乗る電話がかかってきたら、落ち着いて話を聞いてください。",
     category: "all",
     preview: "assets/wallpaper-kohenro-chan.jpg",
     downloads: {
       jpg: "assets/wallpaper-kohenro-chan.jpg",
       webp: "assets/wallpaper-kohenro-chan.webp"
     },
-    tags: ["合言葉", "家族LINE"]
+    tags: ["確認励行", "落ち着いて"]
   },
   {
     id: "wp02",
     title: "ダークへんろちゃん",
-    description: "シックな背景に警告メッセージを配置した夜間待受け向けバージョン。",
+    description: "検事を名乗る電話先にいるのは、本当に検事でしょうか？",
     category: "all",
     preview: "assets/wallpaper-dark-kohenro.jpg",
     downloads: {
       jpg: "assets/wallpaper-dark-kohenro.jpg",
       webp: "assets/wallpaper-dark-kohenro.webp"
     },
-    tags: ["夜間モード", "#9110"]
+    tags: ["怪しいと思ったら最寄りの検察庁へ", "＃9110に相談"]
   }
 ];
 
