@@ -263,6 +263,70 @@ body.nav-open {
   background: rgba(15, 23, 42, 0.02);
 }
 
+.block--comic {
+  background: rgba(246, 170, 28, 0.04);
+}
+
+.comic-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.comic-board__logo {
+  width: min(280px, 60%);
+  border-radius: 0;
+}
+
+.comic-grid {
+  width: min(920px, 100%);
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "panel1"
+    "panel2"
+    "panel3"
+    "panel4";
+}
+
+.comic-panel {
+  margin: 0;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+}
+
+.comic-panel--part1 {
+  grid-area: panel1;
+}
+
+.comic-panel--part2 {
+  grid-area: panel2;
+}
+
+.comic-panel--part3 {
+  grid-area: panel3;
+}
+
+.comic-panel--part4 {
+  grid-area: panel4;
+}
+
+@media (min-width: 768px) {
+  /* Arrange desktop grid so the story reads from top-right to bottom-left */
+  .comic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "panel2 panel1"
+      "panel4 panel3";
+  }
+}
+
 .block--game {
   background: linear-gradient(135deg, rgba(215, 38, 61, 0.08), rgba(246, 170, 28, 0.08));
 }

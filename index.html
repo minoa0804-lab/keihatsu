@@ -26,6 +26,7 @@
         </button>
         <ul id="navMenu">
           <li><a data-nav-link href="#alert">注意喚起</a></li>
+          <li><a data-nav-link href="#comic">4コマ漫画</a></li>
           <li><a data-nav-link href="#poster">ポスター</a></li>
           <li><a data-nav-link href="#wallpapers">待ち受け</a></li>
           <li><a data-nav-link href="#game">ゲーム</a></li>
@@ -110,10 +111,38 @@
       </div>
     </section>
 
-    <section id="poster" class="block block--poster" aria-labelledby="posterTitle" data-animate="slide">
+    <section id="comic" class="block block--comic" aria-labelledby="comicTitle" data-animate="fade">
       <div class="container">
         <header class="block__header">
           <p class="eyebrow">Section 02</p>
+          <h2 id="comicTitle">4コマ漫画で楽しく学ぶ</h2>
+          <p>タイトルロゴと4つのコマを使って、右上→左上→右下→左下の順でストーリーを追える構成にしました。スマートフォンでは縦に1コマずつ読めます。</p>
+        </header>
+
+        <div class="comic-board">
+          <img class="comic-board__logo" src="assets/logo.png" alt="STOP! 特殊詐欺のタイトルロゴ" loading="lazy">
+          <div class="comic-grid" role="group" aria-label="4コマ漫画">
+            <figure class="comic-panel comic-panel--part1">
+              <img src="assets/part01.png" alt="4コマ漫画 1コマ目" loading="lazy">
+            </figure>
+            <figure class="comic-panel comic-panel--part2">
+              <img src="assets/part02.png" alt="4コマ漫画 2コマ目" loading="lazy">
+            </figure>
+            <figure class="comic-panel comic-panel--part3">
+              <img src="assets/part03.png" alt="4コマ漫画 3コマ目" loading="lazy">
+            </figure>
+            <figure class="comic-panel comic-panel--part4">
+              <img src="assets/part04.png" alt="4コマ漫画 4コマ目" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="poster" class="block block--poster" aria-labelledby="posterTitle" data-animate="slide">
+      <div class="container">
+        <header class="block__header">
+          <p class="eyebrow">Section 03</p>
           <h2 id="posterTitle">啓発ポスター</h2>
           <p>A4サイズのポスターを用意しました。3種類のデザインを切り替えられます。</p>
         </header>
@@ -141,7 +170,7 @@
     <section id="wallpapers" class="block" aria-labelledby="wallpaperTitle" data-animate="fade">
       <div class="container">
        <header class="block__header">
-        <p class="eyebrow">Section 03</p>
+        <p class="eyebrow">Section 04</p>
         <h2 id="wallpaperTitle">スマホ待ち受け｜家族で共有</h2>
         <p>1080×1920px の縦型画像を PNG / WebP で全2種類配布。「こへんろちゃん」と「ダークへんろちゃん」をどなたでもダウンロードできます。</p>
       </header>
@@ -159,7 +188,7 @@
       <div class="container game">
         <div class="game__content">
           <header class="block__header">
-            <p class="eyebrow">Section 04</p>
+            <p class="eyebrow">Section 05</p>
             <h2 id="gameTitle">ゲームで学べる特殊詐欺の手口</h2>
             <p>シナリオ分岐で詐欺の手口を疑似体験し、正しい行動で被害にあわないようにしよう！<span id="releaseLabel"></span></p>
           </header>
