@@ -29,9 +29,9 @@ const posters = [
     tip: "自宅の電話機付近に掲示するのに最適"
   },
   {
-    title: "その電話、なりすましかも",
+    title: "その電話、あなたの人生を奪いに来る",
     image: "assets/poster-03.jpg",
-    alt: "電話の対応をしているたぬきのポスター",
+    alt: "電話の対応をしている男性のポスター、背後には怪しく目の光る人物が",
     download: "assets/poster-03-a3.pdf",
     size: "A4 300dpi",
     tip: "公共施設・医療機関・役所向け"
