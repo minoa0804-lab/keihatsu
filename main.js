@@ -30,9 +30,9 @@ const posters = [
   },
   {
     title: "その電話、なりすましかも",
-    image: "assets/poster-call-03.jpg",
+    image: "assets/poster-03.jpg",
     alt: "電話の対応をしているたぬきのポスター",
-    download: "assets/poster-call-03-a3.pdf",
+    download: "assets/poster-03-a3.pdf",
     size: "A4 300dpi",
     tip: "公共施設・医療機関・役所向け"
   }
