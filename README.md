@@ -1,73 +1,119 @@
-# STOP! 特殊詐欺 — ワンページ啓発サイト
+# STOP! 特殊詐欺 - ワンページ啓発サイト
 
-軽量な静的ワンページサイトです。ポスター・待ち受け画像・ゲーム紹介などの啓発コンテンツをブラウザのみで配布することを目的としています。
+高松地方検察庁の特殊詐欺防止啓発コンテンツを掲載する静的ワンページサイトです。ポスター、待ち受け画像、漫画、ゲーム導線をブラウザだけで配布できる構成にしています。
 
-## 構成（重要ファイル）
-- `index.html` — ページの骨格。アクセシビリティ属性（`aria-*`）や `data-animate` が付与されています。
-- `main.js` — すべてのクライアントサイドロジック。ティッカー・トピック表示、ポスター/待ち受けのデータ配列、ナビ、アニメーション、スクロールスパイを実装しています。
-- `styles.css` — 全体スタイル。
-- `assets/` — 画像・PDF 等の静的資産。ファイル名は `main.js` の参照と整合させる必要があります。
+## 構成
 
-## ビルド・確認フロー
-- このプロジェクトにビルドステップはありません。ファイルを編集してブラウザで確認します。
-- ローカルで簡易 HTTP サーバを起動して確認することを推奨します（PowerShell の例）:
+- `index.html` - ページの骨格、本文、外部リンク、固定表示の日付
+- `main.js` - ティッカー、トピック表示、ポスター/待ち受けデータ、ナビ、アニメーション
+- `styles.css` - 全体スタイル
+- `assets/` - 公開で使用する画像、PDF、GIF
+- `assets/archived/` - 公開ページから参照しない退避済み資産
+- `scripts/check-site.mjs` - 公開前の構造・資産チェック
+- `scripts/check-links.mjs` - 外部リンクとローカル配布ファイルの確認
+
+## ローカル確認
+
+このプロジェクトにビルドステップはありません。ローカルHTTPサーバで表示確認します。
 
 ```powershell
-npx http-server . -p 8080
-# またはエディタの Live Server を利用
-start msedge http://localhost:8080/
+python -m http.server 8080
 ```
 
-一部の機能（`navigator.clipboard` 等）はファイル:// では制限されるため、必ず HTTP 経由で動作確認してください。
+ブラウザで次を開きます。
+
+```text
+http://localhost:8080/
+```
+
+`navigator.clipboard` など一部機能は `file://` では制限されるため、HTTP経由で確認してください。
 
 ## 公開前チェック
-差し替え前に、参照アセットの欠落・0バイトファイル・基本的な HTML 破損・`main.js` の構文を確認します。
+
+差し替え前に次を実行します。
 
 ```powershell
 node scripts/check-site.mjs
+node scripts/check-links.mjs
 ```
 
-警告（`WARN`）は未使用のアクティブ資産など、公開前に確認したい項目です。エラー（`ERROR`）が出た場合は公開差し替え前に修正してください。
+`check-site` は次を確認します。
 
-## どこを編集するか（よくある変更）
-- 表示文言 / 注意喚起の更新: `main.js` の先頭配列を編集します（`tickerMessages`, `topics`）。
-- ポスターの追加: `main.js` の `posters` 配列にオブジェクトを追加し、対応する画像と PDF を `assets/` に置きます。例:
+- 必須ファイルの存在
+- `=<head>` のような明らかなHTML破損
+- `index.html` / `main.js` から参照される `assets/` ファイルの存在
+- 0バイトファイルの混入
+- `main.js` の構文
+- 未使用のアクティブ資産
+
+`check-links` は次を確認します。
+
+- SOS47、体験ゲーム、ミニゲームなどの外部リンク
+- ポスターPDF、待ち受けJPG/WebP、QR画像などのローカル配布ファイル
+
+## GitHub Actions
+
+`.github/workflows/check-site.yml` により、`main` へのpush時とPull Request時に次が自動実行されます。
+
+```powershell
+node scripts/check-site.mjs
+node scripts/check-links.mjs
+```
+
+手元でチェックを忘れても、GitHub上で最低限の破損を検出できます。
+
+## 公開差し替え前の確認手順
+
+1. `node scripts/check-site.mjs` を実行する
+2. `node scripts/check-links.mjs` を実行する
+3. `python -m http.server 8080` でローカル表示を確認する
+4. PC幅とスマホ幅で表示崩れがないか見る
+5. ポスター切替、PDFダウンロード、待ち受けダウンロード、ゲームリンクを確認する
+6. 問題がなければcommitして `main` にpushする
+7. GitHub Actionsの結果を確認する
+
+## よくある変更
+
+表示文言や注意喚起の更新:
+
+- `index.html` の本文を編集
+- `main.js` 先頭の `tickerMessages` / `topics` を編集
+
+ポスターの追加:
+
+- 画像とPDFを `assets/` に追加
+- `main.js` の `posters` 配列に追加
 
 ```js
 {
   title: "その電話、なりすましかも",
   image: "assets/poster-03.jpg",
-  alt: "…",
+  alt: "ポスターの説明",
   download: "assets/poster-03-a3.pdf",
   size: "A4 300dpi",
   tip: "公共施設向け"
 }
 ```
 
-- 待ち受けの追加: `wallpapers` 配列に `preview` と `downloads`（`jpg`/`webp`）を設定して、`assets/` に画像を追加します。
+待ち受けの追加:
 
-## 実装上の注意（このリポジトリ特有）
-- アニメーションと自動ローテーションは `prefers-reduced-motion` を尊重します。ユーザー設定を壊さないように注意してください（`reduceMotionQuery` を参照）。
-- 表示切り替えやスクロールスパイは `IntersectionObserver` を利用しています。ユニットテストや DOM モックが必要な場合はこの点を考慮してください。
-- 共有機能は `navigator.clipboard` を用いており、HTTPS またはローカルサーバ上でのみ動作します。
+- JPG/WebPを `assets/` に追加
+- `main.js` の `wallpapers` 配列に `preview` と `downloads` を追加
 
-## 資産（assets/）取り扱いルール
-- ファイル名は小文字・ハイフン区切りで統一してください（例: `poster-03.jpg`, `poster-03-a3.pdf`）。
-- 画像には `loading="lazy"` を維持し、差し替え時は `width`/`height` 属性の整合性を確認してください。
-- 既存の古いファイルは `assets/archived/` に退避する運用を推奨します（既にこのリポジトリでは採用済み）。
+## 資産管理ルール
 
-## テスト観点（手動）
-- ティッカーが自動で切り替わるか（`tickerMessages` が 2 件以上である場合）。
-- ポスターのスライダー・サムネイル操作、PDF ダウンロードの挙動。
-- 待ち受けダウンロード（JPG/WebP）が期待どおりに動作するか。
+- 公開ページで使う画像・PDFだけを `assets/` 直下に置く
+- 使わないが残したい古い資産は `assets/archived/` に退避する
+- 不要な0バイトファイルは残さない
+- ファイル名は小文字・ハイフン区切りを基本にする
+- 参照を変更したら `node scripts/check-site.mjs` を実行する
 
-## コミット・運用ノート
-- 変更を加えたら簡単にブラウザで確認してからコミットしてください。
-- 推奨コミット例: `chore: update poster assets and main.js references`
+## 手動テスト観点
 
-## 拡張提案（任意）
-- `main.js` を小さな ES モジュールに分割して、`data/` 配列（コンテンツ）と UI ロジックを分離すると保守性が向上します。
-- GitHub Pages や簡単な CI（`htmlproofer` 相当の静的チェック）を導入して、リンク切れや画像の欠落を自動検出するのも有用です。
-
----
-ご要望があれば、この README を英語版に翻訳したり、CI プレビュー手順を追加したりします。
+- ティッカーが表示される
+- モバイルメニューが開閉する
+- ポスターの前後ボタンとサムネイルが動く
+- PDFダウンロード先が正しい
+- 待ち受けJPG/WebPのリンクが正しい
+- 体験ゲーム、ミニゲーム、SOS47への外部リンクが開く
+- PC幅とスマホ幅で横スクロールが出ない
