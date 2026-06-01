@@ -16,9 +16,9 @@ const topics = [
 
 const posters = [
   {
-    title: "その電話、なりすましかも（ブラックへんろちゃん）",
+    title: "その電話、なりすましかも（こへんろちゃん（闇））",
     image: "assets/poster-warning-01.jpg",
-    alt: "ブラックへんろちゃんのポスター",
+    alt: "こへんろちゃん（闇）のポスター",
     download: "assets/poster-warning-01-a3.pdf",
     size: "A4 300dpi",
     tip: "自治会や会社の掲示板・商店街に最適"
@@ -56,7 +56,7 @@ const wallpapers = [
   },
   {
     id: "wp02",
-    title: "ダークへんろちゃん",
+    title: "こへんろちゃん（闇）",
     description: "検事を名乗る電話先にいるのは、本当に検事でしょうか？",
     category: "all",
     preview: "assets/wallpaper-dark-kohenro.jpg",
@@ -89,7 +89,6 @@ window.addEventListener("DOMContentLoaded", () => {
   initNav();
   initAnimations();
   initBackToTop();
-  setUpdateLabels();
 });
 
 function initTicker() {
@@ -314,13 +313,4 @@ function initBackToTop() {
   btn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-}
-
-function setUpdateLabels() {
-  const updateLabel = document.getElementById("updateLabel");
-  const releaseLabel = document.getElementById("releaseLabel");
-  const formatter = new Intl.DateTimeFormat("ja-JP", { dateStyle: "medium" });
-  const now = formatter.format(new Date());
-  if (updateLabel) updateLabel.textContent = `最終更新: ${now}`;
-  if (releaseLabel) releaseLabel.textContent = `｜最新アップデート: ${now}`;
 }
