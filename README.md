@@ -20,6 +20,15 @@ start msedge http://localhost:8080/
 
 一部の機能（`navigator.clipboard` 等）はファイル:// では制限されるため、必ず HTTP 経由で動作確認してください。
 
+## 公開前チェック
+差し替え前に、参照アセットの欠落・0バイトファイル・基本的な HTML 破損・`main.js` の構文を確認します。
+
+```powershell
+node scripts/check-site.mjs
+```
+
+警告（`WARN`）は未使用のアクティブ資産など、公開前に確認したい項目です。エラー（`ERROR`）が出た場合は公開差し替え前に修正してください。
+
 ## どこを編集するか（よくある変更）
 - 表示文言 / 注意喚起の更新: `main.js` の先頭配列を編集します（`tickerMessages`, `topics`）。
 - ポスターの追加: `main.js` の `posters` 配列にオブジェクトを追加し、対応する画像と PDF を `assets/` に置きます。例:
