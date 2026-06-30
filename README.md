@@ -8,7 +8,6 @@
 - `main.js` - ティッカー、トピック表示、ポスター/待ち受けデータ、ナビ、アニメーション
 - `styles.css` - 全体スタイル
 - `assets/` - 公開で使用する画像、PDF、GIF
-- `assets/archived/` - 公開ページから参照しない退避済み資産
 - `scripts/check-site.mjs` - 公開前の構造・資産チェック
 - `scripts/check-links.mjs` - 外部リンクとローカル配布ファイルの確認
 
@@ -103,7 +102,6 @@ node scripts/check-links.mjs
 ## 資産管理ルール
 
 - 公開ページで使う画像・PDFだけを `assets/` 直下に置く
-- 使わないが残したい古い資産は `assets/archived/` に退避する
 - 不要な0バイトファイルは残さない
 - ファイル名は小文字・ハイフン区切りを基本にする
 - 参照を変更したら `node scripts/check-site.mjs` を実行する
